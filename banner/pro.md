@@ -143,7 +143,7 @@ private Account account;
 
 ![](pro.assets/image-20191018173309981.png)
 
-方法三使用自定义properties文件读取
+##### 方法三使用自定义properties文件读取
 
 首先在resources创建
 
