@@ -19,6 +19,9 @@
            "java交流群": "https://jq.qq.com/?_wv=1027&k=5oxM6hw"
         }
     },
+    "structure": {
+        "readme": "README.md"
+    },
     "output": null,
     "pdf": {
         "fontSize": 12,
