@@ -2,6 +2,8 @@
 
 ### Spring Boot匹配指定后缀*.action *.do的路径访问
 
+(项目地址:https://github.com/heng1234/springboot2.x)
+
 新建个配置文件MyWebMvcConfigurer
 
 ```java
