@@ -1,6 +1,6 @@
 # springboot集成lombok插件
 
-###### 什么是lombok?(项目地址:https://github.com/heng1234/springboot2.x)
+###### 什么是lombok?(项目地址:https://github.com/heng1234/springboot2.x/tree/master/boot_lombok)
 
 Lombok项目是一个Java库，它会自动插入编辑器和构建工具中，Lombok提供了一组有用的注释，用来消除Java类中的大量样板代码。仅五个字符(@Data)就可以替换数百行代码从而产生干净，简洁且易于维护的Java类。
 
@@ -122,8 +122,6 @@ http://localhost:7001/lombok/testLombok.html
 得出结果:
 
 ![image-20191016173935901](lombok.assets/image-20191016173935901.png)
-
-项目地址:https://github.com/heng1234/springboot2.x
 
 ------
 

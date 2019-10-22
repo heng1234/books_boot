@@ -1,5 +1,7 @@
 # Springboot2.x集成mybatis(druid+xml方式)
 
+**[项目地址](https://github.com/heng1234/springboot2.x/tree/master/boot_mybatis)**:https://github.com/heng1234/springboot2.x/tree/master/boot_mybatis
+
 **整合MyBatis之前，先搭建一个基本的Spring Boot项目[项目创建地址](https://start.spring.io/)。这里使用关系型数据库Oracle 11g**
 
 创建数据表t_user

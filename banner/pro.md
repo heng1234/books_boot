@@ -1,6 +1,6 @@
 # springboot读取配置文件
 
-##### 前言 (项目地址:https://github.com/heng1234/springboot2.x)
+##### 前言 (项目地址:https://github.com/heng1234/springboot2.x/tree/master/boot_banner_yml)
 
 Spring-Boot的核心配置文件是application.properties ，会默认读取该配置文件，当然也可以通过注解自定义配置文件的信息。
 
