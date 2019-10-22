@@ -1,4 +1,4 @@
-# springboot集成lombok插件
+# springboot2.x集成lombok插件
 
 ###### 什么是lombok?(项目地址:https://github.com/heng1234/springboot2.x/tree/master/boot_lombok)
 
