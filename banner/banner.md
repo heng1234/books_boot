@@ -123,3 +123,5 @@ public static void main(String[] args) {
     app.run(args);
 }
 ```
+
+[下一章:springboot读取配置文件](./pro.md)

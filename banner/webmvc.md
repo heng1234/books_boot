@@ -66,3 +66,7 @@ Profile用来针对不同的环境下使用不同的配置文件，多环境配�
 至于哪个具体的配置文件会被加载，需要在application.properties文件中通过`spring.profiles.active`属性来设置，其值对应`{profile}`值。
 
 如：`spring.profiles.active=dev`就会加载application-dev.properties配置文件内容。可以在运行jar文件的时候使用命令`java -jar xxx.jar --spring.profiles.active={profile}`切换不同的环境配置。
+
+
+
+[下一章:pringboot2.x集成mybatis(druid+xml方式)](../mybatis/mybatis.md)
