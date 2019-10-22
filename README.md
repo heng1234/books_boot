@@ -7,3 +7,5 @@
   * [springboot读取配置文件](./banner/pro.md)
   * [springboot访问路径配置和Profile配置说明](./banner/webmvc.md)
 
+[springboot集成mybatis(xml形式)](./mybatis/mybatis.md)
+
