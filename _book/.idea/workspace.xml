@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7461b6fe-af67-4437-9f49-741a4ff388ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/mybatis/mybatis.md" beforeDir="false" afterPath="$PROJECT_DIR$/mybatis/mybatis.md" afterDir="false" />
-    </list>
+    <list default="true" id="7461b6fe-af67-4437-9f49-741a4ff388ac" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -196,16 +194,15 @@
       <option name="presentableId" value="Default" />
       <updated>1571372589334</updated>
       <workItem from="1571372590734" duration="3689000" />
-      <workItem from="1571707493897" duration="4719000" />
+      <workItem from="1571707493897" duration="4998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8408000" />
+    <option name="totallyTimeSpent" value="8687000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
