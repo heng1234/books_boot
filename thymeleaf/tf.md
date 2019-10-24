@@ -2,6 +2,8 @@
 
 [项目地址](https://github.com/heng1234/springboot2.x/commit/25bbc2433c6f5953575d22d3179383bf7273d82d)：https://github.com/heng1234/springboot2.x/commit/25bbc2433c6f5953575d22d3179383bf7273d82d
 
+语法参考:[springboot整合thymeleaf及常用标签的使用方法](https://blog.csdn.net/qq_39313596/article/details/82147626)
+
 ### 常用模板引擎对比
 
 |  模板引擎  |                             优点                             |                             缺点                             |
@@ -128,3 +130,5 @@ public class ThyeleafController {
 ###### 访问http://localhost:7004/tf/index.do?name=hlvy
 
 <img src="tf.assets/image-20191023183421198.png" alt="image-20191023183421198" style="zoom:50%;" />
+
+下一章: [SpringBoot整合Thymeleaf——自定义标签](./customizetf.md)

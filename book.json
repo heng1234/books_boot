@@ -107,5 +107,8 @@
             "fade": false,
             "style": "flat"
         }
+    },
+    "styles": {
+        "website": "./website.css"
     }
 }
