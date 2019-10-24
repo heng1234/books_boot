@@ -131,4 +131,4 @@ public class ThyeleafController {
 
 <img src="tf.assets/image-20191023183421198.png" alt="image-20191023183421198" style="zoom:50%;" />
 
-下一章: [SpringBoot整合Thymeleaf——自定义标签](./customizetf.md)
+下一章: [SpringBoot整合Thymeleaf——自定义标签](customizetf.md)
