@@ -13,3 +13,4 @@
 * [Spring Boot 使用thymeleaf](./thymeleaf/tf.md)
 * [SpringBoot整合Thymeleaf——自定义标签](./thymeleaf/customizetf.md)
 * [Spring Boot MyBatis配置Druid多数据源](./datasource/datasource.md)
+* [SpringBoot 中使用Redis缓存](./redis/redis.md)

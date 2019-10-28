@@ -351,3 +351,5 @@ OracleStudentMapper.xml：
 访问:http://localhost:7005/student/querystudentsfromoracle
 
 <img src="datasource.assets/image-20191028112456071.png" alt="image-20191028112456071" style="zoom:50%;" />
+
+下一章：[SpringBoot 中使用Redis缓存](../redis/redis.md)
