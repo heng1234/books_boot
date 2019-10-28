@@ -14,7 +14,7 @@ Redis 是完全开源免费的，遵守BSD协议，是一个高性能的key-valu
 ```
 
 Redis可以存储键与5种不同数据结构类型之间的映射，这5种数据结构类型分别为 String（字符串）、List（列表）、Set（集合）、Hash（散列）和 Zset（有序集合）。
-<img src="redis.assets/image-20191028143905372.png" alt="image-20191028143905372" style="zoom:50%;" />
+<img src="redis.assets/image-20191028143905372.png" alt="image-20191028143905372" style="zoom:100%;" />
 **2.2 Redis 优势**
 
 ```txt
