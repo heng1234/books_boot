@@ -674,3 +674,5 @@ public class RedisController {
 
 <img src="redis.assets/image-20191028172236361.png" alt="image-20191028172236361" style="zoom:50%;" />
 
+下一章:[SpringBoot 中使用ehcache缓存](../cache/cache.md)
+
