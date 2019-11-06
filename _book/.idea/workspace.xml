@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7461b6fe-af67-4437-9f49-741a4ff388ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/SUMMARY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/cache.md" beforeDir="false" afterPath="$PROJECT_DIR$/cache/cache.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Init_filter_servlet/ifs.md" beforeDir="false" afterPath="$PROJECT_DIR$/Init_filter_servlet/ifs.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,12 +27,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cache/cache.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="397">
-                <caret line="316" column="72" selection-start-line="316" selection-start-column="72" selection-end-line="316" selection-end-column="72" />
+              <first_editor relative-caret-position="4740">
+                <caret line="316" column="4" selection-start-line="316" selection-start-column="4" selection-end-line="316" selection-end-column="4" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Init_filter_servlet/ifs.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="15">
+                <caret line="1" column="155" selection-start-line="1" selection-start-column="155" selection-end-line="1" selection-end-column="155" />
               </first_editor>
               <second_editor />
             </state>
@@ -128,6 +138,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/SUMMARY.md" />
         <option value="$PROJECT_DIR$/cache/cache.md" />
+        <option value="$PROJECT_DIR$/Init_filter_servlet/ifs.md" />
       </list>
     </option>
   </component>
@@ -233,12 +244,12 @@
       <workItem from="1571707493897" duration="7010000" />
       <workItem from="1571896750002" duration="1612000" />
       <workItem from="1571901831942" duration="11075000" />
-      <workItem from="1572859329777" duration="753000" />
+      <workItem from="1572859329777" duration="1059000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24139000" />
+    <option name="totallyTimeSpent" value="24445000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -391,8 +402,18 @@
     <entry file="file://$PROJECT_DIR$/cache/cache.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="397">
-            <caret line="316" column="72" selection-start-line="316" selection-start-column="72" selection-end-line="316" selection-end-column="72" />
+          <first_editor relative-caret-position="4740">
+            <caret line="316" column="4" selection-start-line="316" selection-start-column="4" selection-end-line="316" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Init_filter_servlet/ifs.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="15">
+            <caret line="1" column="155" selection-start-line="1" selection-start-column="155" selection-end-line="1" selection-end-column="155" />
           </first_editor>
           <second_editor />
         </state>
