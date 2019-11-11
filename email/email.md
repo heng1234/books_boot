@@ -374,15 +374,15 @@ emailTemplate.html
 
 <img src="email.assets/image-20191111154535922.png" alt="image-20191111154535922" style="zoom:50%;" />
 
-访问:http://localhost:7010/email/tempMail?email=1350047452@qq.com
+自定义模板访问:http://localhost:7010/email/tempMail?email=1350047452@qq.com
 
 <img src="email.assets/image-20191111154627119.png" alt="image-20191111154627119" style="zoom:50%;" />
 
-访问:http://localhost:7010/email/imgMail?email=1350047452@qq.com
+发送图片访问:http://localhost:7010/email/imgMail?email=1350047452@qq.com
 
 <img src="email.assets/image-20191111154737041.png" alt="image-20191111154737041" style="zoom:50%;" />
 
-访问:http://localhost:7010/email/attachmentMail?email=1350047452@qq.com
+带附件访问:http://localhost:7010/email/attachmentMail?email=1350047452@qq.com
 
 
 
