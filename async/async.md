@@ -195,4 +195,4 @@ public class DoTaskController {
 
 <img src="async.assets/image-20191107165606065.png" alt="image-20191107165606065" style="zoom:50%;" />
 
-下一章:[springboot中配置定时任务(cron表达式)线程池方式](./task/task.md)
+下一章:[springboot中配置定时任务(cron表达式)线程池方式](../task/task.md)
