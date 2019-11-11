@@ -1,0 +1,751 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>springboot中配置定时任务(cron表达式)线程池方式 · springboot2.x教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="hlvy">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-markdown-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../async/async.html" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://blog.csdn.net/qq_39313596" target="_blank" class="custom-link">csdn地址</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://jq.qq.com/?_wv=1027&k=5oxM6hw" target="_blank" class="custom-link">java交流群</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <a target="_blank" href="https://github.com/heng1234/springboot2.x">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    项目地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../springboot.html">
+            
+                <a href="../springboot.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    springboot介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../lombok.html">
+            
+                <a href="../lombok.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    springboot集成lombok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    springboot基础配置
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../banner/banner.html">
+            
+                <a href="../banner/banner.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    springboot使用banner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../banner/pro.html">
+            
+                <a href="../banner/pro.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    springboot读取配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../banner/webmvc.html">
+            
+                <a href="../banner/webmvc.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    springboot访问路径配置和Profile配置说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../mybatis/mybatis.html">
+            
+                <a href="../mybatis/mybatis.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    springboot集成mybatis(xml形式)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Aop/aop.html">
+            
+                <a href="../Aop/aop.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    springboot  AOP记录用户操作日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../thymeleaf/tf.html">
+            
+                <a href="../thymeleaf/tf.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    springboot 使用thymeleaf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../thymeleaf/customizetf.html">
+            
+                <a href="../thymeleaf/customizetf.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    springboot整合Thymeleaf——自定义标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../datasource/datasource.html">
+            
+                <a href="../datasource/datasource.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    springboot MyBatis配置Druid多数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../redis/redis.html">
+            
+                <a href="../redis/redis.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    springboot 中使用Redis缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../cache/cache.html">
+            
+                <a href="../cache/cache.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    springboot 中使用ehcache缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Init_filter_servlet/ifs.html">
+            
+                <a href="../Init_filter_servlet/ifs.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    springboot使用拦截器-过滤器-servlet-listener
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../async/async.html">
+            
+                <a href="../async/async.html">
+            
+                    
+                        <b>1.14.</b>
+                    
+                    springboot中使用异步调用(线程池)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.15" data-path="task.html">
+            
+                <a href="task.html">
+            
+                    
+                        <b>1.15.</b>
+                    
+                    springboot中配置定时任务(cron表达式)线程池方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >springboot中配置定时任务(cron表达式)线程池方式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#springboot&#x4E2D;&#x914D;&#x7F6E;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;cron&#x8868;&#x8FBE;&#x5F0F;&#x7EBF;&#x7A0B;&#x6C60;&#x65B9;&#x5F0F;"><b>1.15.1.1. </b>springboot&#x4E2D;&#x914D;&#x7F6E;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;(Cron&#x8868;&#x8FBE;&#x5F0F;)&#x7EBF;&#x7A0B;&#x6C60;&#x65B9;&#x5F0F;</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="springboot&#x4E2D;&#x914D;&#x7F6E;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;cron&#x8868;&#x8FBE;&#x5F0F;&#x7EBF;&#x7A0B;&#x6C60;&#x65B9;&#x5F0F;"><a name="springboot&#x4E2D;&#x914D;&#x7F6E;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;cron&#x8868;&#x8FBE;&#x5F0F;&#x7EBF;&#x7A0B;&#x6C60;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#springboot&#x4E2D;&#x914D;&#x7F6E;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;cron&#x8868;&#x8FBE;&#x5F0F;&#x7EBF;&#x7A0B;&#x6C60;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.15.1.1. springboot&#x4E2D;&#x914D;&#x7F6E;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;(Cron&#x8868;&#x8FBE;&#x5F0F;)&#x7EBF;&#x7A0B;&#x6C60;&#x65B9;&#x5F0F;</h2>
+<p><a href="https://github.com/heng1234/springboot2.x/tree/master/boot_task" target="_blank">&#x9879;&#x76EE;&#x5730;&#x5740;</a>:<a href="https://github.com/heng1234/springboot2.x/tree/master/boot_task" target="_blank">https://github.com/heng1234/springboot2.x/tree/master/boot_task</a></p>
+<h5 id="quartz-cron&#x8868;&#x8FBE;&#x5F0F;httpsblogcsdnnetqq39313596articledetails90438580"><a name="quartz-cron&#x8868;&#x8FBE;&#x5F0F;httpsblogcsdnnetqq39313596articledetails90438580" class="anchor-navigation-ex-anchor" href="#quartz-cron&#x8868;&#x8FBE;&#x5F0F;httpsblogcsdnnetqq39313596articledetails90438580"><i class="fa fa-link" aria-hidden="true"></i></a><a name="quartz-cron&#x8868;&#x8FBE;&#x5F0F;httpsblogcsdnnetqq39313596articledetails90438580" class="plugin-anchor" href="#quartz-cron&#x8868;&#x8FBE;&#x5F0F;httpsblogcsdnnetqq39313596articledetails90438580"><i class="fa fa-link" aria-hidden="true"></i></a>Quartz Cron&#x8868;&#x8FBE;&#x5F0F;:<a href="https://blog.csdn.net/qq_39313596/article/details/90438580" target="_blank">https://blog.csdn.net/qq_39313596/article/details/90438580</a></h5>
+<p>Quartz Cron&#x8868;&#x8FBE;&#x5F0F;&#x5728;&#x7EBF;&#x751F;&#x6210;&#x5730;&#x5740;:<a href="http://cron.qqe2.com/" target="_blank">http://cron.qqe2.com/</a></p>
+<p>&#x5F00;&#x59CB;&#x4F7F;&#x7528;:</p>
+<p>&#x9996;&#x5148;&#x5728;&#x542F;&#x52A8;&#x7C7B;&#x52A0;&#x4E0A;@EnableScheduling&#x5F00;&#x542F;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot</span><span class="token punctuation">.</span><span class="token class-name">SpringApplication</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>autoconfigure</span><span class="token punctuation">.</span><span class="token class-name">SpringBootApplication</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>scheduling<span class="token punctuation">.</span>annotation</span><span class="token punctuation">.</span><span class="token class-name">EnableScheduling</span><span class="token punctuation">;</span>
+
+<span class="token comment">//&#x5F00;&#x542F;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</span>
+<span class="token annotation punctuation">@EnableScheduling</span>
+<span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BootTaskApplication</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">BootTaskApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x63A5;&#x7740;&#x914D;&#x7F6E;&#x7EBF;&#x7A0B;&#x6C60;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation</span><span class="token punctuation">.</span><span class="token class-name">Bean</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation</span><span class="token punctuation">.</span><span class="token class-name">Configuration</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>scheduling<span class="token punctuation">.</span>annotation</span><span class="token punctuation">.</span><span class="token class-name">SchedulingConfigurer</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>scheduling<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">ThreadPoolTaskScheduler</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>scheduling<span class="token punctuation">.</span>config</span><span class="token punctuation">.</span><span class="token class-name">ScheduledTaskRegistrar</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ *  spring boot &#x591A;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;
+ *  &#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;&#x90FD;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6C60;&#x4F46;&#x4E0D;&#x540C;&#x7EBF;&#x7A0B;&#x4E2D;&#x5B8C;&#x6210;
+ * @author : kaifa
+ * create at:  2019-11-08  15:24
+ * @description: &#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x7EBF;&#x7A0B;&#x6C60;
+ */</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SchedulingConfig</span> <span class="token keyword">implements</span> <span class="token class-name">SchedulingConfigurer</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">configureTasks</span><span class="token punctuation">(</span><span class="token class-name">ScheduledTaskRegistrar</span> taskRegistrar<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        taskRegistrar<span class="token punctuation">.</span><span class="token function">setScheduler</span><span class="token punctuation">(</span><span class="token function">taskScheduler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment">/**
+     * &#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4F7F;&#x7528;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;
+     * &#x4F7F;&#x7528;@Bean&#x6CE8;&#x89E3;&#xFF0C;&#x5728;&#x4E0D;&#x914D;&#x7F6E;destroyMethod&#x65F6;&#xFF0C;&#x5176;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#xFF1A;
+     *
+     * String destroyMethod() default AbstractBeanDefinition.INFER_METHOD;
+     *
+     *
+     * public static final String INFER_METHOD = &quot;(inferred)&quot;;
+     * &#x4E5F;&#x5C31;&#x662F;&#x5728;&#x4E0D;&#x914D;&#x7F6E;destroyMethod&#x65F6;&#xFF0C;spring&#x4F1A;&#x4F7F;&#x7528;&#x63A8;&#x65AD;&#x7684;&#x9500;&#x6BC1;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x79CD;&#x63A8;&#x65AD;&#x7684;&#x65B9;&#x6CD5;&#x8981;&#x6C42;&#x6EE1;&#x8DB3;&#xFF1A;
+     *
+     * 1. public&#x7684;
+     * 2. &#x65E0;&#x53C2;&#x6570;
+     * 3. &#x65B9;&#x6CD5;&#x540D;&#x4E3A;close&#x6216;shutdown
+     *
+     * &#x5982;&#x679C;&#x5F53;&#x4E00;&#x4E2A;bean&#x6B63;&#x597D;&#x6709;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x5728;&#x9500;&#x6BC1;&#x65F6;&#x8C03;&#x7528;&#x3002;&#x6BD4;&#x5982;redis.clients.jedis.BinaryJedis &#x53CA;&#x5B50;&#x7C7B;&#x5C31;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#xFF0C;
+     * &#x6709;&#x4E00;&#x4E2A;shutdown&#x65B9;&#x6CD5;&#x3002;&#x4F46;&#x662F;&#x4ED6;&#x7684;shutdown&#x65B9;&#x6CD5;&#x662F;&#x5411;redis-server&#x53D1;&#x9001;shutdown&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x9500;&#x6BC1;&#x8FDE;&#x63A5;&#x3002;
+     * &#x56E0;&#x6B64;&#x5728;&#x8FD9;&#x4E2A;Bean&#x9500;&#x6BC1;&#x65F6;&#xFF0C;&#x5176;&#x5B9E;&#x662F;&#x4E0D;&#x5E0C;&#x671B;&#x8C03;&#x7528;&#x8BE5;shutdown&#x65B9;&#x6CD5;&#x7684;&#x3002;
+     * &#x5982;&#x679C;&#x60F3;&#x9632;&#x6B62;&#x8C03;&#x7528;&#x63A8;&#x65AD;&#x7684;&#x9500;&#x6BC1;&#x65B9;&#x6CD5;&#xFF0C;&#x9700;&#x8981;&#x7ED9;destroyMethod&#x8D4B;&#x503C;&#x4E3A;&quot;&quot;&#xFF1A;
+     *
+     * @Bean(destroyMethod = &quot;&quot;)
+     *&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x68C0;&#x67E5;&#x9500;&#x6BC1;&#x7684;&#x65B9;&#x6CD5;&#xFF08;requiresDestruction&#x91CC;&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x6CE8;&#x518C;DisposableBeanAdapter&#xFF0C;DisposableBeanAdapter&#x4F1A;&#x6700;&#x7EC8;&#x8C03;&#x7528;bean&#x7684;destroyMethod&#x3002;
+     *
+     *
+     * protected void registerDisposableBeanIfNecessary(String beanName, Object bean, RootBeanDefinition mbd) {
+     *         AccessControlContext acc = (System.getSecurityManager() != null ? getAccessControlContext() : null);
+     *         if (!mbd.isPrototype() &amp;&amp; requiresDestruction(bean, mbd)) {
+     *             if (mbd.isSingleton()) {
+     *                 // Register a DisposableBean implementation that performs all destruction
+     *                 // work for the given bean: DestructionAwareBeanPostProcessors,
+     *                 // DisposableBean interface, custom destroy method.
+     *                 registerDisposableBean(beanName,
+     *                         new DisposableBeanAdapter(bean, beanName, mbd, getBeanPostProcessors(), acc));
+     *             }
+     *             else {
+     *                 // A bean with a custom scope...
+     *                 Scope scope = this.scopes.get(mbd.getScope());
+     *                 if (scope == null) {
+     *                     throw new IllegalStateException(&quot;No Scope registered for scope name &apos;&quot; + mbd.getScope() + &quot;&apos;&quot;);
+     *                 }
+     *                 scope.registerDestructionCallback(beanName,
+     *                         new DisposableBeanAdapter(bean, beanName, mbd, getBeanPostProcessors(), acc));
+     *             }
+     *         }
+     *     }
+     * @return
+     */</span>
+    <span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span>destroyMethod <span class="token operator">=</span> <span class="token string">&quot;shutdown&quot;</span><span class="token punctuation">,</span> name <span class="token operator">=</span> <span class="token string">&quot;taskScheduler&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">ThreadPoolTaskScheduler</span> <span class="token function">taskScheduler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">ThreadPoolTaskScheduler</span> scheduler <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThreadPoolTaskScheduler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        scheduler<span class="token punctuation">.</span><span class="token function">setPoolSize</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x7EBF;&#x7A0B;&#x6570;&#x91CF;</span>
+        scheduler<span class="token punctuation">.</span><span class="token function">setThreadNamePrefix</span><span class="token punctuation">(</span><span class="token string">&quot;task-&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x7EBF;&#x7A0B;&#x540D;&#x524D;&#x7F00;</span>
+        scheduler<span class="token punctuation">.</span><span class="token function">setAwaitTerminationSeconds</span><span class="token punctuation">(</span><span class="token number">600</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//waitForTasksToCompleteOnShutdown&#x7684;&#x7B49;&#x5F85;&#x7684;&#x65F6;&#x957F;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;0&#xFF0C;&#x5373;&#x4E0D;&#x7B49;&#x5F85;&#x3002;</span>
+        scheduler<span class="token punctuation">.</span><span class="token function">setWaitForTasksToCompleteOnShutdown</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//&#x662F;&#x5426;&#x7B49;&#x5F85;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x624D;&#x5173;&#x95ED;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;false&#x3002;</span>
+        <span class="token keyword">return</span> scheduler<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>scheduling<span class="token punctuation">.</span>annotation</span><span class="token punctuation">.</span><span class="token class-name">Scheduled</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype</span><span class="token punctuation">.</span><span class="token class-name">Component</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>text</span><span class="token punctuation">.</span><span class="token class-name">SimpleDateFormat</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Date</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * @author : kaifa
+ * create at:  2019-11-08  14:26
+ * @description: &#x5B9A;&#x65F6;&#x4EFB;&#x52A1;
+ */</span>
+
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TaskTest</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5B9A;&#x4E49;&#x6BCF;&#x8FC7;10&#x79D2;&#x6267;&#x884C;&#x4EFB;&#x52A1;</span>
+   <span class="token comment">// @Scheduled(fixedRate = 10000)</span>
+    <span class="token annotation punctuation">@Scheduled</span><span class="token punctuation">(</span>cron <span class="token operator">=</span> <span class="token string">&quot;10 * * * * ?&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token class-name">Task1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SimpleDateFormat</span> dateFormat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">&quot;HH:mm:ss&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Task1&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x540D;&#x79F0;:&quot;</span><span class="token operator">+</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">&quot;&#x73B0;&#x5728;&#x65F6;&#x95F4;&#xFF1A;&quot;</span> <span class="token operator">+</span> dateFormat<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x5B9A;&#x4E49;&#x6BCF;&#x8FC7;10&#x79D2;&#x6267;&#x884C;&#x4EFB;&#x52A1;</span>
+    <span class="token annotation punctuation">@Scheduled</span><span class="token punctuation">(</span>cron <span class="token operator">=</span> <span class="token string">&quot;10 * * * * ?&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token class-name">Task2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SimpleDateFormat</span> dateFormat <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">&quot;HH:mm:ss&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Task2&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x540D;&#x79F0;:&quot;</span><span class="token operator">+</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span><span class="token string">&quot;&#x73B0;&#x5728;&#x65F6;&#x95F4;&#xFF1A;&quot;</span><span class="token operator">+</span> dateFormat<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD0;&#x884C;&#x9879;&#x76EE;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;:</p>
+<p><img src="task.assets/image-20191111095924048.png" alt="image-20191111095924048" style="zoom:50%;"> </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9;  2020 java&#x4EA4;&#x6D41;&#x7FA4;:553997290 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x65F6;&#x95F4;&#xFF1A;
+2019-11-11 10:00:45
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../async/async.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: springboot中使用异步调用(线程池)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"springboot中配置定时任务(cron表达式)线程池方式","level":"1.15","depth":1,"previous":{"title":"springboot中使用异步调用(线程池)","level":"1.14","depth":1,"path":"async/async.md","ref":"./async/async.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-livereload","theme-comscore","-lunr","-search","search-plus@^0.0.11","simple-page-toc@^0.1.1","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","donate@^1.0.2","favicon@^0.0.2","todo@^0.1.3","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","markdown-video","anchor-navigation-ex","embed-pdf","chart@^0.2.0"],"styles":{"website":"./website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright ©  2020 java交流群:553997290","modify_label":"时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"include-csv":{},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"donate":{"alipay":"./booksimg/apay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"./booksimg/pay.jpg","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"theme-comscore":{},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"markdown-video":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"chart":{"type":"c3"},"embed-pdf":{},"search-plus":{}},"theme":"default","author":"hlvy","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"springboot2.x教程","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"csdn地址":"https://blog.csdn.net/qq_39313596","java交流群":"https://jq.qq.com/?_wv=1027&k=5oxM6hw"}},"gitbook":"*","description":"springboot2.x教程","extension":null,"direction":"ltr"},"file":{"path":"task/task.md","mtime":"2019-11-11T02:00:45.976Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-11T07:17:08.544Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-markdown-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

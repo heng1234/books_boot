@@ -2,6 +2,8 @@
 
 使用场景: 发送短信 发送邮件 App消息推送 节省运维凌晨发布任务时间提供效率
 
+[项目地址](https://github.com/heng1234/springboot2.x/tree/master/boot_async):https://github.com/heng1234/springboot2.x/tree/master/boot_async
+
 ## 开启异步
 
 首先得在Spring Boot入口类上加上`@EnableAsync`注解
@@ -192,3 +194,5 @@ public class DoTaskController {
 <img src="async.assets/image-20191107165647272.png" alt="image-20191107165647272" style="zoom:50%;" />
 
 <img src="async.assets/image-20191107165606065.png" alt="image-20191107165606065" style="zoom:50%;" />
+
+下一章:[springboot中配置定时任务(cron表达式)线程池方式](./task/task.md)
