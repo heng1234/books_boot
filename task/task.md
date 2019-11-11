@@ -156,3 +156,6 @@ public class TaskTest {
 运行项目控制台打印:
 
 <img src="task.assets/image-20191111095924048.png" alt="image-20191111095924048" style="zoom:50%;" />
+
+
+下一章:[springboot发送邮箱](../email/email.md)

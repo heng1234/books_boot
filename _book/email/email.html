@@ -1,0 +1,991 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>springboot发送邮箱 · springboot2.x教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="hlvy">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-markdown-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../website.css">
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../task/task.html" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://blog.csdn.net/qq_39313596" target="_blank" class="custom-link">csdn地址</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://jq.qq.com/?_wv=1027&k=5oxM6hw" target="_blank" class="custom-link">java交流群</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <a target="_blank" href="https://github.com/heng1234/springboot2.x">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    项目地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../springboot.html">
+            
+                <a href="../springboot.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    springboot介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../lombok.html">
+            
+                <a href="../lombok.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    springboot集成lombok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    springboot基础配置
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../banner/banner.html">
+            
+                <a href="../banner/banner.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    springboot使用banner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../banner/pro.html">
+            
+                <a href="../banner/pro.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    springboot读取配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../banner/webmvc.html">
+            
+                <a href="../banner/webmvc.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    springboot访问路径配置和Profile配置说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../mybatis/mybatis.html">
+            
+                <a href="../mybatis/mybatis.html">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    springboot集成mybatis(xml形式)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Aop/aop.html">
+            
+                <a href="../Aop/aop.html">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    springboot  AOP记录用户操作日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../thymeleaf/tf.html">
+            
+                <a href="../thymeleaf/tf.html">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    springboot 使用thymeleaf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../thymeleaf/customizetf.html">
+            
+                <a href="../thymeleaf/customizetf.html">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    springboot整合Thymeleaf——自定义标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../datasource/datasource.html">
+            
+                <a href="../datasource/datasource.html">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    springboot MyBatis配置Druid多数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../redis/redis.html">
+            
+                <a href="../redis/redis.html">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    springboot 中使用Redis缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../cache/cache.html">
+            
+                <a href="../cache/cache.html">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    springboot 中使用ehcache缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Init_filter_servlet/ifs.html">
+            
+                <a href="../Init_filter_servlet/ifs.html">
+            
+                    
+                        <b>1.13.</b>
+                    
+                    springboot使用拦截器-过滤器-servlet-listener
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../async/async.html">
+            
+                <a href="../async/async.html">
+            
+                    
+                        <b>1.14.</b>
+                    
+                    springboot中使用异步调用(线程池)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../task/task.html">
+            
+                <a href="../task/task.html">
+            
+                    
+                        <b>1.15.</b>
+                    
+                    springboot中配置定时任务(cron表达式)线程池方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.16" data-path="email.html">
+            
+                <a href="email.html">
+            
+                    
+                        <b>1.16.</b>
+                    
+                    springboot发送邮箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >springboot发送邮箱</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><li><span class="title-icon "></span><a href="#springboot&#x53D1;&#x9001;&#x90AE;&#x7BB1;"><b>1.16.1.1. </b>springboot&#x53D1;&#x9001;&#x90AE;&#x7BB1;</a></li></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="springboot&#x53D1;&#x9001;&#x90AE;&#x7BB1;"><a name="springboot&#x53D1;&#x9001;&#x90AE;&#x7BB1;" class="anchor-navigation-ex-anchor" href="#springboot&#x53D1;&#x9001;&#x90AE;&#x7BB1;"><i class="fa fa-link" aria-hidden="true"></i></a>1.16.1.1. springboot&#x53D1;&#x9001;&#x90AE;&#x7BB1;</h2>
+<p>spring Boot&#x4E2D;&#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x4F7F;&#x7528;&#x7684;&#x662F;Spring&#x63D0;&#x4F9B;&#x7684;<code>org.springframework.mail.javamail.JavaMailSender</code>&#xFF0C;&#x5176;&#x63D0;&#x4F9B;&#x4E86;&#x8BB8;&#x591A;&#x7B80;&#x5355;&#x6613;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x53D1;&#x9001;&#x7B80;&#x5355;&#x7684;&#x90AE;&#x4EF6;&#x3001;HTML&#x683C;&#x5F0F;&#x7684;&#x90AE;&#x4EF6;&#x3001;&#x5E26;&#x9644;&#x4EF6;&#x7684;&#x90AE;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x90AE;&#x4EF6;&#x6A21;&#x677F;&#x3002;</p>
+<p><a href="https://github.com/heng1234/springboot2.x/tree/master/boot_email" target="_blank">&#x9879;&#x76EE;&#x5730;&#x5740;</a>:<a href="https://github.com/heng1234/springboot2.x/tree/master/boot_email" target="_blank">https://github.com/heng1234/springboot2.x/tree/master/boot_email</a></p>
+<p>pom&#x5F15;&#x5165;&#x76F8;&#x5173;jar</p>
+<pre class="language-"><code class="lang-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>&#x90AE;&#x4EF6;&#x53D1;&#x9001;jar<span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">&gt;</span></span>
+    <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">&gt;</span></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span>
+    <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">&gt;</span></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>mail<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span>
+    <span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">&gt;</span></span><span class="token number">2.1</span><span class="token number">.7</span><span class="token punctuation">.</span>RELEASE<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>thymeleaf<span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">&gt;</span></span>
+    <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">&gt;</span></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">&gt;</span>
+    <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">&gt;</span></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>thymeleaf<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">&gt;</span>
+    <span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">&gt;</span></span><span class="token number">2.1</span><span class="token number">.7</span><span class="token punctuation">.</span>RELEASE<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">&gt;</span>
+</code></pre>
+<p>application.yml</p>
+<pre class="language-"><code class="lang-yml">server:
+  port: 7010
+spring:
+  mail:
+    #email
+    #SMTP&#x670D;&#x52A1;&#x5668;&#x7684;&#x540D;&#x5B57;
+    host: smtp.mxhichina.com
+    #&#x53D1;&#x9001;&#x4EBA;&#x90AE;&#x7BB1;&#x540D;&#x79F0;
+    username: xxxx@qq.com
+    #&#x90AE;&#x7BB1;&#x5BC6;&#x7801;&#xFF0C;&#x8FD9;&#x91CC;&#x6307;&#x7684;&#x662F;&#xFF0C;&#x5728;&#x90AE;&#x7BB1;&#x4E2D;&#x6253;&#x5F00;SMTP/POP3&#x9A8C;&#x8BC1;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x9A8C;&#x8BC1;&#x7801;
+    password: 123456
+    #&#x7F16;&#x7801;&#x683C;&#x5F0F;
+    default-encoding: UTF-8
+    #SMTP&#x670D;&#x52A1;&#x5668;&#x5F00;&#x653E;&#x7684;&#x7AEF;&#x53E3;
+    port: 465
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+</code></pre>
+<p>MailUtil</p>
+<pre class="language-"><code class="lang-java">
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation</span><span class="token punctuation">.</span><span class="token class-name">Autowired</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation</span><span class="token punctuation">.</span><span class="token class-name">Value</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>core<span class="token punctuation">.</span>io</span><span class="token punctuation">.</span><span class="token class-name">FileSystemResource</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>mail</span><span class="token punctuation">.</span><span class="token class-name">MailSender</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>mail</span><span class="token punctuation">.</span><span class="token class-name">SimpleMailMessage</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>mail<span class="token punctuation">.</span>javamail</span><span class="token punctuation">.</span><span class="token class-name">JavaMailSender</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>mail<span class="token punctuation">.</span>javamail</span><span class="token punctuation">.</span><span class="token class-name">MimeMessageHelper</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype</span><span class="token punctuation">.</span><span class="token class-name">Component</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>thymeleaf</span><span class="token punctuation">.</span><span class="token class-name">TemplateEngine</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>thymeleaf<span class="token punctuation">.</span>context</span><span class="token punctuation">.</span><span class="token class-name">Context</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>annotation</span><span class="token punctuation">.</span><span class="token class-name">Resource</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>mail</span><span class="token punctuation">.</span><span class="token class-name">MessagingException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>mail<span class="token punctuation">.</span>internet</span><span class="token punctuation">.</span><span class="token class-name">MimeMessage</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io</span><span class="token punctuation">.</span><span class="token class-name">File</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Map</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Set</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * @author : kaifa
+ * create at:  2019-11-11  13:48
+ * @description: springboot&#x96C6;&#x6210;&#x53D1;&#x9001;&#x90AE;&#x7BB1;&#x6839;&#x5DE5;&#x5177;&#x7C7B;
+ */</span>
+<span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MailUtil</span> <span class="token punctuation">{</span>
+
+
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">&quot;${spring.mail.username}&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> from<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">JavaMailSender</span> mailSender<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">MailSender</span> sender<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Resource</span>
+    <span class="token keyword">private</span> <span class="token class-name">TemplateEngine</span> templateEngine<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * &#x8FD9;&#x662F;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x90AE;&#x4EF6;
+     * @param to &#x53D1;&#x9001;&#x76EE;&#x6807;&#x90AE;&#x7BB1;
+     * @param subject &#x6807;&#x9898;
+     * @param content &#x5185;&#x5BB9;
+     * @throws Exception
+     */</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendSimpleMail</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token keyword">to</span><span class="token punctuation">,</span><span class="token class-name">String</span> subject<span class="token punctuation">,</span><span class="token class-name">String</span> content<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+        <span class="token class-name">SimpleMailMessage</span> mail <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">SimpleMailMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mail<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token keyword">to</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mail<span class="token punctuation">.</span><span class="token function">setSubject</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mail<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mail<span class="token punctuation">.</span><span class="token function">setFrom</span><span class="token punctuation">(</span>from<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>mail<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x53D1;&#x9001;html&#x90AE;&#x4EF6;
+     * @param to &#x76EE;&#x6807;&#x90AE;&#x7BB1;
+     * @param subject &#x6807;&#x9898;
+     * @param content &#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x5B58;&#x653E;html
+     * @throws Exception
+     */</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendHtmlMail</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token keyword">to</span> <span class="token punctuation">,</span> <span class="token class-name">String</span> subject <span class="token punctuation">,</span> <span class="token class-name">String</span> content<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+        <span class="token class-name">MimeMessage</span> message <span class="token operator">=</span>mailSender<span class="token punctuation">.</span><span class="token function">createMimeMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token class-name">MimeMessageHelper</span> helper <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">MimeMessageHelper</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setFrom</span><span class="token punctuation">(</span>from<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token keyword">to</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setSubject</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            mailSender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">MessagingException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+
+
+    <span class="token comment">/**
+     * &#x5E26;&#x6709;&#x9644;&#x4EF6;&#x7684;&#x90AE;&#x4EF6;
+     * @param to &#x63A5;&#x6536;&#x5730;&#x5740;
+     * @param subject &#x6807;&#x9898;
+     * @param content &#x5185;&#x5BB9;
+     * @param filePath &#x6587;&#x4EF6;&#x8DEF;&#x5F84;
+     * @throws Exception
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendOnlyAttachmentMail</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token keyword">to</span> <span class="token punctuation">,</span><span class="token class-name">String</span> subject<span class="token punctuation">,</span><span class="token class-name">String</span> content <span class="token punctuation">,</span> <span class="token class-name">String</span> filePath<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+
+        <span class="token class-name">MimeMessage</span> message <span class="token operator">=</span> mailSender<span class="token punctuation">.</span><span class="token function">createMimeMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MimeMessageHelper</span> helper <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            helper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MimeMessageHelper</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setFrom</span><span class="token punctuation">(</span>from<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token keyword">to</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setSubject</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">FileSystemResource</span> file <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">FileSystemResource</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> fileName <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">addAttachment</span><span class="token punctuation">(</span>fileName<span class="token punctuation">,</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//helper.addAttachment(fileName+&quot;_test&quot;,file);</span>
+            mailSender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">MessagingException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x5E26;&#x6709;&#x591A;&#x4E2A;&#x9644;&#x4EF6;&#x7684;&#x90AE;&#x4EF6;
+     * @param to &#x76EE;&#x6807;&#x90AE;&#x7BB1;
+     * @param subject &#x6807;&#x9898;
+     * @param content &#x5185;&#x5BB9;
+     * @param filePathList &#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x96C6;&#x5408;
+     * @throws Exception
+     */</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendAttachmentsMail</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token keyword">to</span> <span class="token punctuation">,</span> <span class="token class-name">String</span> subject<span class="token punctuation">,</span> <span class="token class-name">String</span> content <span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> filePathList<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+
+        <span class="token class-name">MimeMessage</span> message <span class="token operator">=</span> mailSender<span class="token punctuation">.</span><span class="token function">createMimeMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MimeMessageHelper</span> helper <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            helper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MimeMessageHelper</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setFrom</span><span class="token punctuation">(</span>from<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token keyword">to</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setSubject</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">FileSystemResource</span> file <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">String</span> filePath <span class="token operator">:</span> filePathList<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                file <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">FileSystemResource</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">String</span> fileName <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">getFilename</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                helper<span class="token punctuation">.</span><span class="token function">addAttachment</span><span class="token punctuation">(</span>fileName<span class="token punctuation">,</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                helper<span class="token punctuation">.</span><span class="token function">addAttachment</span><span class="token punctuation">(</span>fileName<span class="token operator">+</span><span class="token string">&quot;_test&quot;</span><span class="token punctuation">,</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            mailSender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">MessagingException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x5E26;&#x6709;&#x56FE;&#x7247;&#x7684;&#x90AE;&#x4EF6;
+     * @param to &#x76EE;&#x6807;&#x90AE;&#x7BB1;
+     * @param subject &#x4E3B;&#x9898;
+     * @param content &#x5185;&#x5BB9;
+     * @param filePath &#x6587;&#x4EF6;&#x8DEF;&#x5F84;
+     * @param srcId &#x56FE;&#x7247;id
+     * @throws Exception
+     */</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendImageMail</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token keyword">to</span> <span class="token punctuation">,</span><span class="token class-name">String</span> subject<span class="token punctuation">,</span><span class="token class-name">String</span> content <span class="token punctuation">,</span> <span class="token class-name">String</span> filePath<span class="token punctuation">,</span><span class="token class-name">String</span> srcId<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+
+        <span class="token class-name">MimeMessage</span> message <span class="token operator">=</span> mailSender<span class="token punctuation">.</span><span class="token function">createMimeMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MimeMessageHelper</span> helper <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            helper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MimeMessageHelper</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setFrom</span><span class="token punctuation">(</span>from<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token keyword">to</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setSubject</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">FileSystemResource</span> file <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">FileSystemResource</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">addInline</span><span class="token punctuation">(</span>srcId<span class="token punctuation">,</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            mailSender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">MessagingException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     *  &#x643A;&#x5E26;&#x591A;&#x4E2A;&#x56FE;&#x7247;&#x7684;&#x90AE;&#x4EF6;
+     * @param to &#x76EE;&#x6807;&#x90AE;&#x7BB1;
+     * @param subject &#x5185;&#x5BB9;
+     * @param content &#x5185;&#x5BB9;
+     * @param filePathList &#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x96C6;&#x5408;
+     * @param srcIdList &#x56FE;&#x7247;id&#x96C6;&#x5408;
+     * @throws Exception
+     */</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendImagesMail</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token keyword">to</span> <span class="token punctuation">,</span><span class="token class-name">String</span> subject<span class="token punctuation">,</span><span class="token class-name">String</span> content <span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> filePathList<span class="token punctuation">,</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> srcIdList<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+
+        <span class="token class-name">MimeMessage</span> message <span class="token operator">=</span> mailSender<span class="token punctuation">.</span><span class="token function">createMimeMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MimeMessageHelper</span> helper <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            helper <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MimeMessageHelper</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setFrom</span><span class="token punctuation">(</span>from<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setTo</span><span class="token punctuation">(</span><span class="token keyword">to</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setSubject</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            helper<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>srcIdList<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token class-name">FileSystemResource</span> file <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">FileSystemResource</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePathList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                helper<span class="token punctuation">.</span><span class="token function">addInline</span><span class="token punctuation">(</span>srcIdList<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            mailSender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">MessagingException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x4F7F;&#x7528;html&#x6A21;&#x7248;&#x8FDB;&#x884C;&#x53D1;&#x9001;&#x90AE;&#x4EF6;
+     * @param to &#x76EE;&#x6807;&#x90AE;&#x7BB1;
+     * @param subject &#x6807;&#x9898;
+     * @param map map &#x7528;&#x4E8E;&#x6A21;&#x677F;&#x91CC;&#x8BFB;&#x53D6;map&#x6570;&#x636E; &#x6A21;&#x677F;&#x8BFB;&#x53D6;&#x6BD4;&#x5982;th:text=&quot;${randomvalue}&quot;
+     * @param templateName &#x76EE;&#x6807;&#x540D;&#x79F0; &#x6BD4;&#x5982;emailTemplate&#x5BF9;&#x5E94;emailTemplate.html
+     * @throws Exception
+     */</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendTemplateMail</span><span class="token punctuation">(</span><span class="token class-name">String</span> <span class="token keyword">to</span> <span class="token punctuation">,</span> <span class="token class-name">String</span> subject<span class="token punctuation">,</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> map <span class="token punctuation">,</span> <span class="token class-name">String</span> templateName<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+        <span class="token class-name">Context</span> context <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Context</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> keyList <span class="token operator">=</span>map<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token operator">:</span>keyList<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            context<span class="token punctuation">.</span><span class="token function">setVariable</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">String</span> templateContext <span class="token operator">=</span> templateEngine<span class="token punctuation">.</span><span class="token function">process</span><span class="token punctuation">(</span>templateName<span class="token punctuation">,</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sendHtmlMail</span><span class="token punctuation">(</span><span class="token keyword">to</span><span class="token punctuation">,</span>subject<span class="token punctuation">,</span>templateContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x6D4B;&#x8BD5;MailController</p>
+<pre class="language-"><code class="lang-java">
+
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>boot_email<span class="token punctuation">.</span>mail</span><span class="token punctuation">.</span><span class="token class-name">MailUtil</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation</span><span class="token punctuation">.</span><span class="token class-name">Autowired</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">ResourceUtils</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation</span><span class="token punctuation">.</span><span class="token class-name">RequestMapping</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation</span><span class="token punctuation">.</span><span class="token class-name">RestController</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">HashMap</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Map</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">Random</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * @author : kaifa
+ * create at:  2019-11-11  14:05
+ * @description: email&#x6D4B;&#x8BD5;
+ */</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;email&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MailController</span> <span class="token punctuation">{</span>
+
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">MailUtil</span> mailUtil<span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     * &#x53D1;&#x9001;&#x90AE;&#x4EF6;
+     * @param email &#x90AE;&#x7BB1;
+     * @param title &#x4E3B;&#x9898;
+     * @param context &#x5185;&#x5BB9;
+     * @throws Exception
+     */</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;simpleMail&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendSimpleMai</span><span class="token punctuation">(</span><span class="token class-name">String</span> email<span class="token punctuation">,</span><span class="token class-name">String</span> title<span class="token punctuation">,</span><span class="token class-name">String</span> context<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+        mailUtil<span class="token punctuation">.</span><span class="token function">sendSimpleMail</span><span class="token punctuation">(</span>email<span class="token punctuation">,</span>title<span class="token punctuation">,</span>context<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x53D1;&#x9001;&#x56FE;&#x7247;
+     * @param email &#x90AE;&#x7BB1;
+     * @throws Exception
+     */</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;imgMail&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendImageMail</span><span class="token punctuation">(</span><span class="token class-name">String</span> email<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+
+        <span class="token class-name">String</span> srcId <span class="token operator">=</span> <span class="token string">&quot;harryImage&quot;</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> htmlContent <span class="token operator">=</span> <span class="token string">&quot;&lt;html&gt;&lt;body&gt;&lt;h3&gt;this is a image:&lt;/h3&gt; &lt;img src = \&apos;cid:{srcId}\&apos;&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&quot;{srcId}&quot;</span><span class="token punctuation">,</span>srcId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mailUtil<span class="token punctuation">.</span><span class="token function">sendImageMail</span><span class="token punctuation">(</span>email<span class="token punctuation">,</span><span class="token string">&quot;&#x4E3B;&#x9898;&quot;</span><span class="token punctuation">,</span>htmlContent<span class="token punctuation">,</span><span class="token class-name">ResourceUtils</span><span class="token punctuation">.</span><span class="token function">getURL</span><span class="token punctuation">(</span><span class="token string">&quot;classpath:static/images/heng.png&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>srcId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x6839;&#x636E;&#x81EA;&#x5B9A;&#x4E49;&#x6A21;&#x677F;&#x53D1;&#x9001; &#x9A8C;&#x8BC1;&#x7801;
+     * @param email
+     * @throws Exception
+     */</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;tempMail&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span>  <span class="token keyword">void</span> <span class="token function">sendTemplateMail</span><span class="token punctuation">(</span><span class="token class-name">String</span> email<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+        <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span><span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> map <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">&quot;randomvalue&quot;</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">999999</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        mailUtil<span class="token punctuation">.</span><span class="token function">sendTemplateMail</span><span class="token punctuation">(</span>email<span class="token punctuation">,</span><span class="token string">&quot;&#x6D4B;&#x8BD5;&quot;</span><span class="token punctuation">,</span>map<span class="token punctuation">,</span><span class="token string">&quot;emailTemplate&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x643A;&#x5E26;&#x914D;&#x4EF6;
+     * @param email
+     * @throws Exception
+     */</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">&quot;attachmentMail&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span>  <span class="token keyword">void</span> <span class="token function">sendOnlyAttachmentMail</span><span class="token punctuation">(</span><span class="token class-name">String</span> email<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">{</span>
+        mailUtil<span class="token punctuation">.</span><span class="token function">sendOnlyAttachmentMail</span><span class="token punctuation">(</span>email<span class="token punctuation">,</span><span class="token string">&quot;&#x6D4B;&#x8BD5;&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;&#x5E26;&#x9644;&#x4EF6;email&quot;</span><span class="token punctuation">,</span><span class="token class-name">ResourceUtils</span><span class="token punctuation">.</span><span class="token function">getURL</span><span class="token punctuation">(</span><span class="token string">&quot;classpath:static/file/emailTest.xls&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>emailTemplate.html</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>th</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.thymeleaf.org<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>&#x90AE;&#x4EF6;&#x6A21;&#x7248;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+    &#x4F60;&#x597D;&#xFF0C;&#x6B22;&#x8FCE;&#x4F60;&#x7684;&#x5230;&#x6765;,&#x4F60;&#x7684;&#x9A8C;&#x8BC1;&#x7801;&#x4E3A;&#xFF1A;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name"><span class="token namespace">th:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>${randomvalue}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>&#x9879;&#x76EE;&#x7ED3;&#x6784;</p>
+<p><img src="email.assets/image-20191111154535922.png" alt="image-20191111154535922" style="zoom:50%;"></p>
+<p>&#x8BBF;&#x95EE;:<a href="http://localhost:7010/email/tempMail?email=1350047452@qq.com" target="_blank">http://localhost:7010/email/tempMail?email=1350047452@qq.com</a></p>
+<p><img src="email.assets/image-20191111154627119.png" alt="image-20191111154627119" style="zoom:50%;"></p>
+<p>&#x8BBF;&#x95EE;:<a href="http://localhost:7010/email/imgMail?email=1350047452@qq.com" target="_blank">http://localhost:7010/email/imgMail?email=1350047452@qq.com</a></p>
+<p><img src="email.assets/image-20191111154737041.png" alt="image-20191111154737041" style="zoom:50%;"></p>
+<p>&#x8BBF;&#x95EE;:<a href="http://localhost:7010/email/attachmentMail?email=1350047452@qq.com" target="_blank">http://localhost:7010/email/attachmentMail?email=1350047452@qq.com</a></p>
+<p><img src="email.assets/image-20191111154829117.png" alt="image-20191111154829117" style="zoom:50%;"> </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9;  2020 java&#x4EA4;&#x6D41;&#x7FA4;:553997290 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x65F6;&#x95F4;&#xFF1A;
+2019-11-11 15:48:58
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../task/task.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: springboot中配置定时任务(cron表达式)线程池方式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"springboot发送邮箱","level":"1.16","depth":1,"previous":{"title":"springboot中配置定时任务(cron表达式)线程池方式","level":"1.15","depth":1,"path":"task/task.md","ref":"./task/task.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-livereload","theme-comscore","-lunr","-search","search-plus@^0.0.11","simple-page-toc@^0.1.1","prism@^2.1.0","prism-themes@^0.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","donate@^1.0.2","favicon@^0.0.2","todo@^0.1.3","terminal@^0.3.2","alerts@^0.2.0","include-csv@^0.1.0","markdown-video","anchor-navigation-ex","embed-pdf","chart@^0.2.0"],"styles":{"website":"./website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright ©  2020 java交流群:553997290","modify_label":"时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"include-csv":{},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"donate":{"alipay":"./booksimg/apay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"./booksimg/pay.jpg","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"theme-comscore":{},"prism-themes":{},"alerts":{},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"markdown-video":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"chart":{"type":"c3"},"embed-pdf":{},"search-plus":{}},"theme":"default","author":"hlvy","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":12,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"springboot2.x教程","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"csdn地址":"https://blog.csdn.net/qq_39313596","java交流群":"https://jq.qq.com/?_wv=1027&k=5oxM6hw"}},"gitbook":"*","description":"springboot2.x教程","extension":null,"direction":"ltr"},"file":{"path":"email/email.md","mtime":"2019-11-11T07:48:58.584Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-11T07:50:50.566Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-markdown-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
