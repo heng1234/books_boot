@@ -18,3 +18,4 @@
 * [springboot中使用异步调用(线程池)](./async/async.md)
 * [springboot中配置定时任务(cron表达式)线程池方式](./task/task.md)
 * [springboot发送邮箱](./email/email.md)
+* [springboot使用swagger2](./swagger2/swagger2.md)

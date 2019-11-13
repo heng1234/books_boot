@@ -387,3 +387,8 @@ emailTemplate.html
 
 
 <img src="email.assets/image-20191111154829117.png" alt="image-20191111154829117" style="zoom:50%;" />
+
+
+
+下一章:[springboot使用swagger2](../swagger2/swagger2.md)
+
